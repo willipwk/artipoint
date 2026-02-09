@@ -248,7 +248,7 @@ class HandSegmentor:
         Returns:
             filtered_mask (np.ndarray): Processed mask based on the mode.
         """
-        if mask.dtype != np.bool:
+        if mask.dtype != np.bool_:
             mask = mask > 0.5
         correct_holes = mode == "holes"
         working_mask = (correct_holes ^ mask).astype(np.uint8)

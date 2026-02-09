@@ -140,7 +140,7 @@ class MobileSAMSegmenter:
         """
         filtered_masks = []
         for mask in masks:
-            if mask.dtype != np.bool:
+            if mask.dtype != np.bool_:
                 mask = mask > 0.5
             correct_holes = mode == "holes"
             working_mask = (correct_holes ^ mask).astype(np.uint8)

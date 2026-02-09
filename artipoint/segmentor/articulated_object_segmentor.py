@@ -231,7 +231,7 @@ class ArticulatedObjectSegmentor:
             return []
 
         # Convert hand mask to proper format
-        if hand_mask.dtype == np.bool:
+        if hand_mask.dtype == np.bool_:
             hand_mask = hand_mask.astype(np.uint8)
 
         # Resize hand mask to match other masks
