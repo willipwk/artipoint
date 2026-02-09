@@ -139,6 +139,7 @@ class ArtiEstimator:
     def _project_2d_tracks_to_3d(
         self,
         depth_window_frames: List[np.ndarray],
+        K: np.ndarray,
         pred_tracks: np.ndarray,
         min_depth: float = 0.3,
         max_depth: float = 5.0,
@@ -148,7 +149,7 @@ class ArtiEstimator:
         """
         pred_tracks_3d = []
         valid_depth_masks = []
-        K = np.array(self.arti4d_dataset.depth_intrinsics)
+        # K = np.array(self.arti4d_dataset.depth_intrinsics)
         for i, depth in enumerate(depth_window_frames):
             coord_x = np.clip(pred_tracks[i, :, 0], 0, depth.shape[1] - 1)
             coord_y = np.clip(pred_tracks[i, :, 1], 0, depth.shape[0] - 1)
