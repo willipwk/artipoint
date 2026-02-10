@@ -7,8 +7,8 @@ from pathlib import Path
 import sys
 import os
 
-from hands_segmentation.hand_segmentor import HandSegmentor
-from utils.mobile_sam_segmentor import MobileSAMSegmenter
+from artipoint.hands_segmentation.hand_segmentor import HandSegmentor
+from artipoint.utils.mobile_sam_segmentor import MobileSAMSegmenter
 
 
 class ArticulatedObjectSegmentor:

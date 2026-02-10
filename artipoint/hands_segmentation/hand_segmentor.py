@@ -45,6 +45,7 @@ class HandSegmentor:
             model=model_name,
             pretrained=True,
             source="local",
+            weights_only=False,
             **kwargs,
         )
         self.model.to(self.device)
