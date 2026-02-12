@@ -154,7 +154,7 @@ class ArtiEstimator:
             coord_x = np.clip(pred_tracks[i, :, 0], 0, depth.shape[1] - 1)
             coord_y = np.clip(pred_tracks[i, :, 1], 0, depth.shape[0] - 1)
             p2 = np.stack([coord_x, coord_y, np.ones_like(coord_x)], axis=1)
-            d = depth[coord_y.astype(int), coord_x.astype(int)] / 1000.0
+            d = depth[coord_y.astype(int), coord_x.astype(int)]
             points = np.linalg.inv(K) @ p2.T * d
             valid_mask = np.logical_and(
                 np.logical_and(points[2] > min_depth, points[2] < max_depth),
